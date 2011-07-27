@@ -24,14 +24,14 @@
 
 class SensorManager
 {
-	public $db;
+	private $db;
 	private static $instance;
 	
 	private function __construct()
 	{
-		//$db = DatabaseManager::getInstance();
-		$db = &ADONewConnection('mysql');
-		$db->Connect(CONFIG_DB_HOST, CONFIG_DB_USER, CONFIG_DB_PASSWORD, CONFIG_DB_FULLNAME);
+		$db = DatabaseManager::getInstance();
+		//$db = &ADONewConnection('mysql');
+		//$db->Connect(CONFIG_DB_HOST, CONFIG_DB_USER, CONFIG_DB_PASSWORD, CONFIG_DB_FULLNAME);
 	}
 	
 	public static function getInstance()
