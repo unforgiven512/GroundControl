@@ -29,26 +29,26 @@ class SensorManager
 	
 	private function __construct()
 	{
-		$db = DatabaseManager::getInstance();
+		$this->db = DatabaseManager::getInstance();
 		//$db = &ADONewConnection('mysql');
 		//$db->Connect(CONFIG_DB_HOST, CONFIG_DB_USER, CONFIG_DB_PASSWORD, CONFIG_DB_FULLNAME);
 	}
 	
 	public static function getInstance()
 	{
- 		if ($instance == NULL)
+ 		if (self::$instance == NULL)
 		{
- 			$instance = new SensorManager();
+ 			self::$instance = new SensorManager();
 		}
 		
- 		return $instance;
+ 		return self::$instance;
 	}
 	
  	public function getTotalSensors()
 	{
 		// get total sensors
 		$sql = "select * from sensors";
-		$rs = $db->Execute($sql);
+		$rs = $this->db->Execute($sql);
 		$sensorTotal = $rs->RecordCount();
 		
 		return $sensorTotal;
