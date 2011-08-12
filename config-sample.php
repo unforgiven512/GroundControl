@@ -36,13 +36,13 @@ define('CONFIG_DB_HOST', 'localhost');
 define('CONFIG_DB_TYPE', 'mysql');
 
 // database username
-define('CONFIG_DB_USER', 'groundcontrol');
+define('CONFIG_DB_USER', 'username');
 
 // database password
 define('CONFIG_DB_PASSWORD', 'password');
 
 // database name
-define('CONFIG_DB_NAME', 'groundcontrol');
+define('CONFIG_DB_NAME', 'db_name');
 
 // database prefix (NOTE: If your server uses 'database prefixes', in the format
 // of 'username_databasename', put your prefix here, and we'll handle the rest.)
